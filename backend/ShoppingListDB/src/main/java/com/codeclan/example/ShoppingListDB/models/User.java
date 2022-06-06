@@ -22,7 +22,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @JsonIgnoreProperties({"familyMembers" , "familyName", "shoppingList"})
+    @JsonIgnoreProperties({"familyMembers" , "shoppingList"})
     @ManyToOne
     @JoinColumn(name = "family_id", nullable = false)
     private Family family;

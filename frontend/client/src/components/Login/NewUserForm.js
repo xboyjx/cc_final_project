@@ -1,11 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 function NewUserForm() {
 
     const [details, setDetails] = useState({name: "", email:"", password: ""})
-    const [familyId, setFamilyId]=useState(0)
+    const [familyId, setFamilyId]=useState(null)
+
+    const[createdUser, setCreatedUser] = useState("")
 
     function addUserToFamily(familyId, details){
         const requestOptions = {
@@ -16,7 +18,8 @@ function NewUserForm() {
 
         fetch(`http://localhost:8080/users/family/${familyId}`, requestOptions)
         .then(res => res.json())
-        .then(data => console.log(data))
+        // .then(data => console.log(data))
+        .then(data => setCreatedUser(data))
     }
 
     const submitHandler = e => {
@@ -25,14 +28,20 @@ function NewUserForm() {
         console.log(details)
         console.log(familyId)
 
+
         addUserToFamily(familyId, details)
+
+        setDetails({name:"", email:"", password:""})
+        setFamilyId(null)
 
     }
 
   return (
+      <div>
       <form onSubmit={submitHandler}>
           <div className='form-inner'>
               <h2>New User</h2>
+              {createdUser ==null ? <p>Error: please re-enter details</p> : ""}
               <div className='new-user-form-group'>
                 <label htmlFor='name'>name: </label>
                 <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
@@ -47,11 +56,17 @@ function NewUserForm() {
               </div>
               <div className='new-user-form-group'>
                 <label htmlFor='family-id'>Family invite code: </label>
-                <input type="text" name="family-id" id="family-id" onChange={e => setFamilyId(e.target.value)}/>
+                <input type="text" name="family-id" id="family-id" onChange={e => setFamilyId(e.target.value)} value={familyId}/>
               </div>
               <input type="submit" value="CREATE" />
           </div>
       </form>
+
+      {createdUser != "" && createdUser != null ? <p>Account created for {createdUser.email} in the {createdUser.family.familyName} family</p> : ""}
+
+      <Link to="/login">Back to Login page</Link>
+
+      </div>
   )
 }
 
