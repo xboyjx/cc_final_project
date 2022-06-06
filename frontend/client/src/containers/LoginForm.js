@@ -27,9 +27,9 @@ function LoginForm({ login, error }) {
               </div>
               <input type="submit" value="LOGIN" />
           </div>
-          <Link to="/new-user">new user </Link>
+          <Link to="/new-user">Add new user to a family</Link>
           <br />
-          <Link to="/new-user-and-family">new user and family</Link>
+          <Link to="/new-user-and-family">new family</Link>
       </form>
   )
 }
