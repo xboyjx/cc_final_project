@@ -23,13 +23,13 @@ function ShoppingListContainer( {user} ){
     }, [])
 
 
-    function deleteItemFromList(familyId, itemId){
+    function deleteItemFromList(familyId, itemId, userId){
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json'},
         }
 
-        fetch(`http://localhost:8080/families/${familyId}/removeItem/${itemId}`, requestOptions)
+        fetch(`http://localhost:8080/families/${familyId}/removeItem/${itemId}/user/${userId}`, requestOptions)
         .then(res => res.json())
         .then(data => setFamily(data))
     }

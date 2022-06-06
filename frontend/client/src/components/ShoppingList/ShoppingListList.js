@@ -45,7 +45,7 @@ const ShoppingListList = ( { items, deleteItemFromList, user } ) => {
                     <th>price</th>
                     <th>image</th>
                     <th>amount</th>
-                    {/* <th>added by</th> */}
+                    <th>added by</th>
                     <th>remove</th>
                 </tr>
                 {mappedItems}

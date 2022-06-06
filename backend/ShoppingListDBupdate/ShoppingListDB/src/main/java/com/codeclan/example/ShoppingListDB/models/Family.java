@@ -25,7 +25,7 @@ public class Family {
     @JoinTable(
             name="family_items",
             joinColumns = @JoinColumn(name = "family_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id")
     )
     private List<Item> shoppingList;
 

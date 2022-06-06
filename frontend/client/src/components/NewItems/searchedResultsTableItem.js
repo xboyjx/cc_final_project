@@ -2,19 +2,19 @@ import React from 'react'
 
 const SearchedResultsTableItem = ({result, user}) => {
     
-    function addItemToList(familyId, itemId){
+    function addItemToList(familyId, itemId, userId){
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json'},
         }
 
-        fetch(`http://localhost:8080/families/${familyId}/item/${itemId}`, requestOptions)
+        fetch(`http://localhost:8080/families/${familyId}/item/${itemId}/user/${userId}`, requestOptions)
         .then(res => res.json())
         .then(data => console.log(data))
     }
 
     function handleAddClick(){
-        addItemToList(user.family.id, result.id)
+        addItemToList(user.family.id, result.id, user.id)
     }
 
     return(

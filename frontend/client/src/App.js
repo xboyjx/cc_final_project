@@ -71,7 +71,7 @@ function App() {
         </div>
       </div>
     : <Switch>
-        <Route>
+        <Route exact path={"/login"}>
          <LoginForm login={login} error={error} loading={loading} />
          </Route>
          <Route exact path={"/new-user"}>
