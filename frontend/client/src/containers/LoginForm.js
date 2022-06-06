@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function LoginForm({ login, error }) {
+function LoginForm({ login, error, loading }) {
+
 
     const [details, setDetails] = useState({name:"", email: "", password:""});
 
@@ -13,7 +14,8 @@ function LoginForm({ login, error }) {
     }
 
   return (
-      <form onSubmit={submitHandler}>
+    <div>
+      {loading ? <p>loading</p> :<form onSubmit={submitHandler}>
           <div className='form-inner'>
               <h2>Login</h2>
               {error != "" ? (<div className='error'>{error}</div>): ""}
@@ -31,6 +33,8 @@ function LoginForm({ login, error }) {
           <br />
           <Link to="/new-user-and-family">new family</Link>
       </form>
+  }
+  </div>
   )
 }
 
