@@ -1,4 +1,4 @@
-
+import React from 'react'
 
 const ShoppingListItem = ( { item, count, deleteItemFromList, user} ) => {
 

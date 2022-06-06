@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import ShoppingListContainer from './containers/ShoppingListContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -5,6 +6,8 @@ import Header from './fixed_components/header';
 import NewItemContainer from './containers/NewItemContainer';
 import { useEffect, useState } from 'react';
 import LoginForm from './containers/LoginForm';
+import NewUserForm from './components/Login/NewUserForm';
+import NewUserAndFamilyForm from './components/Login/NewUserAndFamilyForm';
 
 function App() {
 
@@ -49,7 +52,8 @@ function App() {
   return (
 
     <div className='app'>
-      {user != null ?  <Router>
+      <Router>
+      {user != null ?
       <div className='header-holder'>
         <Header logout={logout} user={user}/>
         <div className='content'>
@@ -66,7 +70,18 @@ function App() {
           </Switch>
         </div>
       </div>
-    </Router>: <LoginForm login={login} error={error} />}
+    : <Switch>
+        <Route exact path={"/login"}>
+         <LoginForm login={login} error={error} />
+         </Route>
+         <Route exact path={"/new-user"}>
+           <NewUserForm />
+         </Route>
+         <Route exact path={"/new-user-and-family"}>
+           <NewUserAndFamilyForm />
+         </Route>
+      </Switch>}
+    </Router>
     </div>
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function LoginForm({ login, error }) {
 
@@ -26,6 +27,9 @@ function LoginForm({ login, error }) {
               </div>
               <input type="submit" value="LOGIN" />
           </div>
+          <Link to="/new-user">new user </Link>
+          <br />
+          <Link to="/new-user-and-family">new user and family</Link>
       </form>
   )
 }

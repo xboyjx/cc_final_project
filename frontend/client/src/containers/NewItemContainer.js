@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from "react"
 import NewItemSearchBar from "../components/NewItems/NewItemSearchBar"
 import SearchedResultsTable from "../components/NewItems/searchedResultsTable"
