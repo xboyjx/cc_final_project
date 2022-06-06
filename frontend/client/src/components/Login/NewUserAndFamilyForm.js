@@ -6,6 +6,7 @@ function NewUserAndFamilyForm() {
   
     const[familyFormDetails, setFamilyFormDetails] =useState({familyName:"", familyMembers:[], shoppingList:[]})
     const[familyDetails, setFamilyDetails] = useState(null)
+    const[error, setError] = useState(false)
 
     function createFamily(newFamily){
         const requestOptions = {
@@ -23,8 +24,16 @@ function NewUserAndFamilyForm() {
     const submitHandler = e => {
         e.preventDefault();
 
-        console.log(familyFormDetails)
-        createFamily(familyFormDetails)
+        if(familyFormDetails.familyName != ""){
+            createFamily(familyFormDetails)
+        }
+        else{
+            setError(true)
+        }
+
+
+        // console.log(familyFormDetails)
+        // createFamily(familyFormDetails)
     }
 
   
@@ -34,6 +43,7 @@ function NewUserAndFamilyForm() {
             <form onSubmit={submitHandler}>
             <div>
                 <h2>New family</h2>
+                {error ? <p>Error - please add family name</p> : ""}
                 <div className='new-user-form-group'>
                     <label htmlFor='family-name'>name: </label>
                     <input type="text" name="family-name" id="family-name" onChange={e => setFamilyFormDetails({...familyFormDetails, familyName: e.target.value})} value={familyFormDetails.familyName}/>
