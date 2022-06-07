@@ -28,7 +28,7 @@ public class User {
     @ManyToMany(mappedBy = "users")
     private List<Item> itemsAdded;
 
-    @JsonIgnoreProperties({"familyMembers" , "familyName", "shoppingList"})
+    @JsonIgnoreProperties({"familyMembers" , "shoppingList"})
     @ManyToOne
     @JoinColumn(name = "family_id", nullable = false)
     private Family family;

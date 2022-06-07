@@ -1,4 +1,5 @@
 import React from 'react'
+import './LoginForm.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -10,7 +11,11 @@ function LoginForm({ login, error, loading }) {
     const submitHandler = e => {
         e.preventDefault();
 
+
+
         login(details)
+
+        
     }
 
   return (
@@ -28,10 +33,13 @@ function LoginForm({ login, error, loading }) {
                 <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
               </div>
               <input type="submit" value="LOGIN" />
-          </div>
-          <Link to="/new-user">Add new user to a family</Link>
+              <Link to="/new-user">Add new user to a family</Link>
           <br />
           <Link to="/new-user-and-family">new family</Link>
+          </div>
+          {/* <Link to="/new-user">Add new user to a family</Link>
+          <br />
+          <Link to="/new-user-and-family">new family</Link> */}
       </form>
   }
   </div>

@@ -1,26 +1,26 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, Switch, Redirect } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
-function NewUserForm() {
+function NewUserForm( { addUserToFamily, createdUser } ) {
 
     const [details, setDetails] = useState({name: "", email:"", password: ""})
     const [familyId, setFamilyId]=useState(null)
 
-    const[createdUser, setCreatedUser] = useState("")
+    // const[createdUser, setCreatedUser] = useState("")
 
-    function addUserToFamily(familyId, details){
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type' : 'application/json'},
-            body: JSON.stringify(details)
-        }
+    // function addUserToFamily(familyId, details){
+    //     const requestOptions = {
+    //         method: 'POST',
+    //         headers: { 'Content-Type' : 'application/json'},
+    //         body: JSON.stringify(details)
+    //     }
 
-        fetch(`http://localhost:8080/users/family/${familyId}`, requestOptions)
-        .then(res => res.json())
-        // .then(data => console.log(data))
-        .then(data => setCreatedUser(data))
-    }
+    //     fetch(`http://localhost:8080/users/family/${familyId}`, requestOptions)
+    //     .then(res => res.json())
+    //     // .then(data => console.log(data))
+    //     .then(data => setCreatedUser(data))
+    // }
 
     const submitHandler = e => {
         e.preventDefault();
@@ -33,6 +33,8 @@ function NewUserForm() {
 
         setDetails({name:"", email:"", password:""})
         setFamilyId(null)
+
+        // window.location.href = "http://localhost:3000/Login";
 
     }
 

@@ -29,6 +29,7 @@ const ShoppingListItem = ( { item, count, deleteItemFromList, user} ) => {
                 <td>£{item.price.toFixed(2)}</td>
                 <td><img src={item.imgUrl} height="200" width="200"></img> </td>
                 <td>{count}</td>
+                <td>{(count * item.price).toFixed(2)}</td>
                 <td>{usersWhoAdded.toString()}</td>
                 <td><button onClick={handleDeleteClick}>remove</button></td>
             </tr>
