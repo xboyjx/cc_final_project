@@ -34,7 +34,7 @@ form:after{
     right: -5px;
     bottom: -5px;
     z-index: 1;
-    background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+    background-image: linear-gradient(to bottom right, #60a8f0, #e2e2e7);
 }
 
 form .form-inner{
@@ -87,32 +87,36 @@ form .form-inner input[type="submit"]{
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+    background-image: linear-gradient(to right, #e2e2e7 50%, #e2e2e7 50%, #60a8f0);
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
-    color: #FFF;
+    color: #0c0c0c;
     font-weight: 700;
     cursor: pointer;
+    margin-bottom: 4px;
 }
 
 form .form-inner input[type="submit"]:hover {
     background-position: 100% 0%;
 }
 
-form .form-inner Link[type="submit"]{
+
+.login-link {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+    background-image: linear-gradient(to right, #e2e2e7 50%, #e2e2e7 50%);
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
-    color: #FFF;
+    color: #0c0c0c;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 4px;
 }
 
-form .form-inner Link[type="submit"]:hover {
+.login-link :hover{
     background-position: 100% 0%;
 }

@@ -43,7 +43,7 @@ function App() {
       }  
     }
     console.log("details do not match")
-    setError("details do not match")
+    setError("Please re-enter details")
 }
 
   const logout = () => {

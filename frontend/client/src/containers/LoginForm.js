@@ -33,9 +33,10 @@ function LoginForm({ login, error, loading }) {
                 <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
               </div>
               <input type="submit" value="LOGIN" />
-              <Link to="/new-user">Add new user to a family</Link>
-          <br />
-          <Link to="/new-user-and-family">new family</Link>
+              <br/>
+              <Link to="/new-user" className='login-link'>Add new user to a family</Link>
+              <br />
+              <Link to="/new-user-and-family" className='login-link'>new family</Link>
           </div>
           {/* <Link to="/new-user">Add new user to a family</Link>
           <br />
