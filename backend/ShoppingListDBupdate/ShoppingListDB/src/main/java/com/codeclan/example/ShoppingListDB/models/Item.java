@@ -27,6 +27,7 @@ public class Item {
     @Column(name= "imgUrl")
     private String imgUrl;
 
+    @JsonIgnoreProperties({"email", "password", "family"})
     @ManyToMany
     @JoinTable(
             name="user_items",

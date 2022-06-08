@@ -10,12 +10,7 @@ const ShoppingListItem = ( { item, count, deleteItemFromList, user} ) => {
     const usersWhoAdded = []
     for(let i = 0; i < item.users.length; i++){
         if(userIdAlreadyAdded.includes(item.users[i].id) == false){
-            // let count = 0;
-            // for(let y =0; y<item.users.length; y++){
-            //     if(item.users[y].id == item.users[i].id){
-            //         count++;
-            //     }
-            // }
+
             usersWhoAdded.push(item.users[i].name)
         }
         userIdAlreadyAdded.push(item.users[i].id)

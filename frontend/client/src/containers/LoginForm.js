@@ -32,15 +32,12 @@ function LoginForm({ login, error, loading }) {
                 <label htmlFor='password'>Password: </label>
                 <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
               </div>
-              <input type="submit" value="LOGIN" />
+              <input type="submit" value="Login" />
               <br/>
               <Link to="/new-user" className='login-link'>Add new user to a family</Link>
               <br />
-              <Link to="/new-user-and-family" className='login-link'>new family</Link>
+              <Link to="/new-user-and-family" className='login-link'>New family</Link>
           </div>
-          {/* <Link to="/new-user">Add new user to a family</Link>
-          <br />
-          <Link to="/new-user-and-family">new family</Link> */}
       </form>
   }
   </div>

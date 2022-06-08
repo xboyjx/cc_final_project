@@ -12,8 +12,7 @@ function Header( { logout, user} ){
                 <li><Link to="/settings">Settings</Link></li>
                 <li><Link to="/Login" onClick={logout}>Logout</Link></li>
             </ul>
-            <p>Welcome {user.name}</p>
-            {/* <button onClick={logout}>Logout</button> */}
+            <p className='welcome'>Welcome {user.name}</p>
         </div>
     )
 }

@@ -32,11 +32,6 @@ const ShoppingListList = ( { items, deleteItemFromList, user } ) => {
 
     const totalOfBasket = getTotal(items);
 
-
-    // const mappedItems = items.map((item, index) => {
-    //     return <ShoppingListItem item={item} key={index} deleteItemFromList={deleteItemFromList} />
-    // })
-
     return(
         <div>
             <table className="table">

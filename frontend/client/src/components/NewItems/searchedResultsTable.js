@@ -10,7 +10,7 @@ const SearchedResultsTable = ({searchedResults, user}) => {
 
     return(
         <div>
-            <table>
+            <table className='table'>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>

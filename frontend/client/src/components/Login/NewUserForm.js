@@ -1,4 +1,5 @@
 import React from 'react'
+import './LoginForm.css'
 import { BrowserRouter as Router, Link, Route, Switch, Redirect } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
@@ -44,29 +45,29 @@ function NewUserForm( { addUserToFamily, createdUser } ) {
           <div className='form-inner'>
               <h2>New User</h2>
               {createdUser ==null ? <p>Error: please re-enter details</p> : ""}
-              <div className='new-user-form-group'>
+              <div className='form-group'>
                 <label htmlFor='name'>name: </label>
                 <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
               </div>
-              <div className='new-user-form-group'>
+              <div className='form-group'>
                 <label htmlFor='email'>Email: </label>
                 <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
               </div>
-              <div className='new-user-form-group'>
+              <div className='form-group'>
                 <label htmlFor='password'>Password: </label>
                 <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
               </div>
-              <div className='new-user-form-group'>
+              <div className='form-group'>
                 <label htmlFor='family-id'>Family invite code: </label>
                 <input type="text" name="family-id" id="family-id" onChange={e => setFamilyId(e.target.value)} value={familyId}/>
               </div>
               <input type="submit" value="CREATE" />
+              {createdUser != "" && createdUser != null ? <p>Account created for {createdUser.email}<br /> in the {createdUser.family.familyName} family</p> : ""}
+
+                <br />
+                <Link to="/login" className='login-link'>Back to Login page</Link>
           </div>
       </form>
-
-      {createdUser != "" && createdUser != null ? <p>Account created for {createdUser.email} in the {createdUser.family.familyName} family</p> : ""}
-
-      <Link to="/login">Back to Login page</Link>
 
       </div>
   )
