@@ -1,5 +1,6 @@
 import React from 'react'
 import ShoppingListItem from "./ShoppingListItems";
+import './ShoppingList.css'
 
 
 const ShoppingListList = ( { items, deleteItemFromList, user } ) => {
@@ -33,21 +34,29 @@ const ShoppingListList = ( { items, deleteItemFromList, user } ) => {
     const totalOfBasket = getTotal(items);
 
     return(
-        <div>
-            <table className="table">
-                <tr>
-                    <th>item</th>
-                    <th>price</th>
-                    <th>image</th>
-                    <th>amount</th>
-                    <th>total</th>
-                    <th>added by</th>
-                    <th>remove</th>
-                </tr>
-                {mappedItems}
-            </table>
-            <p>Total: £{totalOfBasket.toFixed(2)}</p>
-        </div>
+
+    <div className="container">
+  <ul class="responsive-table">
+    {mappedItems}
+  </ul>
+</div>
+
+
+        // <div>
+        //     <table className="table">
+        //         <tr>
+        //             <th>item</th>
+        //             <th>price</th>
+        //             <th>image</th>
+        //             <th>amount</th>
+        //             <th>total</th>
+        //             <th>added by</th>
+        //             <th>remove</th>
+        //         </tr>
+        //         {mappedItems}
+        //     </table>
+        //     <p>Total: £{totalOfBasket.toFixed(2)}</p>
+        // </div>
     )
 }
 
