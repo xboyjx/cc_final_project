@@ -1,20 +1,89 @@
+form .form-inner{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    background-color: #FFF;
+    padding: 0px;
+    z-index: 2;
+}
+
+form .form-inner h2 {
+    color: black;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+form .form-inner .form-group{
+    display: relative;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.form-inner .form-group label{
+    display: relative;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 5px;
+    transition: 0.4s;
+}
+
+.form-inner .form-group:focus-within label {
+    color: #FE4880;
+}
+
+form .form-inner .form-group input{
+    display: relative;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+form .form-inner .form-group input:focus{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+form .form-inner input[type="submit"]{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #e2e2e7 50%, #e2e2e7 50%, #60a8f0);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.4s;
+    color: #0c0c0c;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+form .form-inner input[type="submit"]:hover {
+    background-position: 100% 0%;
+}
+
+
+
+
+
 body {
     font-family: 'lato', sans-serif;
   }
   .container {
-    max-width: 500px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #e2e2e7;
   }
   
-  /* h2 {
+  h2 {
     font-size: 26px;
     margin: 20px 0;
     text-align: center;
-  } */
+  }
   
   .responsive-table li {
       border-radius: 3px;
@@ -24,7 +93,7 @@ body {
       margin-bottom: 25px;
     }
     .responsive-table .table-header {
-      background-color: #ffffff;
+      background-color: #95A5A6;
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
@@ -34,28 +103,16 @@ body {
       box-shadow: 9px 0px 9px 0px rgba(0,0,0,0.1);
     }
     .responsive-table .col-1 {
-      flex-basis: 20%;
+      flex-basis: 40%;
     }
     .responsive-table .col-2 {
-      flex-basis: 20%;
+      flex-basis: 40%;
     }
     .responsive-table .col-3 {
       flex-basis: 40%;
     }
     .responsive-table .col-4 {
-      flex-basis: 20%;
-    }
-
-    .responsive-table .col-5 {
-      flex-basis: 20%;
-    }
-
-    .responsive-table .col-6 {
-      flex-basis: 20%;
-    }
-
-    .responsive-table .col-7 {
-      flex-basis: 10%;
+      flex-basis: 40%;
     }
     
       .table-header {
@@ -202,4 +259,62 @@ section {
 .trash:hover span {
 	transform: rotate(-45deg);
 	transition: transform 250ms;
+}
+
+/* CSS */
+.button-4 {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.button-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
 }

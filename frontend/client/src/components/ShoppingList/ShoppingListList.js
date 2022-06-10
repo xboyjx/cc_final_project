@@ -39,6 +39,7 @@ const ShoppingListList = ( { items, deleteItemFromList, user } ) => {
   <ul class="responsive-table">
     {mappedItems}
   </ul>
+  <h3>Basket Total: £{totalOfBasket.toFixed(2)}</h3>
 </div>
 
 
