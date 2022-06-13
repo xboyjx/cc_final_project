@@ -9,17 +9,25 @@ const SearchedResultsTable = ({searchedResults, user}) => {
     })
 
     return(
-        <div>
-            <table className='table'>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Image</th>
-                    <th>add Item</th>
-                </tr>
+
+        <div className="container">
+            <ul class="responsive-table">
                 {searchedResultsMapped}
-            </table>
+            </ul>
         </div>
+
+
+    //     <div>
+    //         <table className='table'>
+    //             <tr>
+    //                 <th>Name</th>
+    //                 <th>Price</th>
+    //                 <th>Image</th>
+    //                 <th>add Item</th>
+    //             </tr>
+    //             {searchedResultsMapped}
+    //         </table>
+    //     </div>
     )
 }
 

@@ -56,6 +56,7 @@ form .form-inner .form-group{
     display: block;
     width: 300px;
     margin-bottom: 15px;
+    align-items: center;
 }
 
 .form-inner .form-group label{
